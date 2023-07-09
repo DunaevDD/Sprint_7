@@ -16,11 +16,11 @@ public class OrdersClient extends Client {
                 .then();
     }
 
-    public ValidatableResponse cancel(int orderId) {
-        String json = String.format("{\"track\": \"%d\"}", orderId);
+    public ValidatableResponse cancel(int order) {
+
         return given()
                 .spec(getSpec())
-                .body(json)
+                .body(order)
                 .when()
                 .put(PATH + "/cancel")
                 .then();
