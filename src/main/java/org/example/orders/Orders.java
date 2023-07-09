@@ -11,6 +11,8 @@ public class Orders {
     private String comment;
     private String[] color;
 
+    private int orderId;
+
     public Orders(String firstName, String lastName, String address, String metroStation, String phone, Number rentTime, String deliveryDate, String comment) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -34,6 +36,11 @@ public class Orders {
         this.color = color;
     }
 
+
+
+    public Orders(int orderId ) {
+        this.orderId=orderId;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -105,4 +112,12 @@ public class Orders {
     public void setColor(String[] color) {
         this.color = color;
     }
+
+    public int getOrderId() {
+        return orderId;
+    }
+    public void setOrderId (int orderId) {
+        this.orderId = orderId;
+    }
+
 }

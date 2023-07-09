@@ -1,10 +1,9 @@
 package org.example.orders;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
-import org.example.orders.Orders;
-import org.example.orders.OrdersAssertions;
-import org.example.orders.OrdersClient;
-import org.example.orders.OrdersGenerator;
+
 
 
 import org.junit.After;
@@ -40,8 +39,9 @@ public class TestParamOrder {
                 {new String[]{}},
         };
     }
-
     @Test
+    @DisplayName("Check order with color")
+    @Description("Проверка создания заказа с разнличным цветом")
     public void checkOrderWithColor() {
         fillOrder.setColor(color);
         ValidatableResponse createResponse = ordersClient.create(fillOrder);
